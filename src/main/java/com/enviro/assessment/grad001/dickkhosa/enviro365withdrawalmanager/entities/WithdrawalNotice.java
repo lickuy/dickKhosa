@@ -64,10 +64,8 @@ public class WithdrawalNotice {
 
     /**
      * Sets the investor for the withdrawal notice.
-     *
-     * @param investor The investor to set.
      */
-    public void setInvestor(Investor investor) {
+    public void setInvestor() {
         // Set the investor for the withdrawal notice
     }
 
@@ -90,4 +88,10 @@ public class WithdrawalNotice {
     public Object getAmount() {
         return null;
     }
+    public Investor getInvestor() {
+
+        Investor investor = new Investor();
+        return investor; // Return the Investor object
+    }
+
 }

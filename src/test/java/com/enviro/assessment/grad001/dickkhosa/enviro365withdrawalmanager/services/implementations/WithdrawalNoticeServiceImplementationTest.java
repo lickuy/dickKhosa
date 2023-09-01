@@ -59,12 +59,12 @@ public class WithdrawalNoticeServiceImplementationTest {
         List<WithdrawalNotice> withdrawalNotices = new ArrayList<>();
         WithdrawalNotice notice1 = new WithdrawalNotice();
         notice1.setId(1L);
-        notice1.setInvestor(investor);
+        notice1.setInvestor();
         withdrawalNotices.add(notice1);
 
         WithdrawalNotice notice2 = new WithdrawalNotice();
         notice2.setId(2L);
-        notice2.setInvestor(investor);
+        notice2.setInvestor();
         withdrawalNotices.add(notice2);
 
         // Mock the repository findByInvestor method

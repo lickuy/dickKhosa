@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -128,4 +129,18 @@ public class Investor {
     public void setArchived(boolean archive) {
         this.archive = archive;
     }
-}
+
+
+        // Other fields and methods
+
+        @Getter
+        private LocalDate dateOfBirth;
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+            this.dateOfBirth = dateOfBirth;
+        }
+
+        // Other getters and setters
+    }
+
+
