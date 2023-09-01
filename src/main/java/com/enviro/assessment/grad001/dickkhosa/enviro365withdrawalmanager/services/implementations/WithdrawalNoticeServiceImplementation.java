@@ -34,7 +34,6 @@ public class WithdrawalNoticeServiceImplementation implements WithdrawalNoticeSe
      */
     @Override
     public WithdrawalNotice createWithdrawalNotice(WithdrawalNotice withdrawalNotice) {
-        // Implement creation logic and save to the repository
         return withdrawalNoticeRepository.save(withdrawalNotice);
     }
 
@@ -46,7 +45,6 @@ public class WithdrawalNoticeServiceImplementation implements WithdrawalNoticeSe
      */
     @Override
     public List<WithdrawalNotice> getWithdrawalNoticesForInvestor(Investor investor) {
-        // Implement logic to fetch withdrawal notices for the given investor from the repository
         return withdrawalNoticeRepository.findByInvestor(investor);
     }
 
@@ -58,9 +56,28 @@ public class WithdrawalNoticeServiceImplementation implements WithdrawalNoticeSe
      */
     @Override
     public Optional<WithdrawalNotice> getWithdrawalNoticeById(Long id) {
-        // Implement logic to fetch a withdrawal notice by its ID from the repository
         return withdrawalNoticeRepository.findById(id);
     }
+    /**
+     * Calculates 90% of the withdrawal amount.
+     *
+     * @param withdrawalNoticeId The ID of the withdrawal notice for which to calculate 90%.
+     * @return An optional containing the calculated amount if the withdrawal notice is found, or empty if not found.
+     */
+    @Override
+    public Optional<Double> calculateNinetyPercent(Long withdrawalNoticeId) {
+        Optional<WithdrawalNotice> withdrawalNoticeOptional = withdrawalNoticeRepository.findById(withdrawalNoticeId);
+
+        if (withdrawalNoticeOptional.isPresent()) {
+            WithdrawalNotice withdrawalNotice = withdrawalNoticeOptional.get();
+            double amount = (double) withdrawalNotice.getAmount();
+            double ninetyPercent = amount * 0.90;
+            return Optional.of(ninetyPercent);
+        } else {
+            return Optional.empty(); // Withdrawal notice not found
+        }
+    }
+
 
     /**
      * Retrieves all withdrawal notices.
@@ -69,7 +86,6 @@ public class WithdrawalNoticeServiceImplementation implements WithdrawalNoticeSe
      */
     @Override
     public List<WithdrawalNotice> getAllWithdrawalNotices() {
-        // Implement logic to fetch all withdrawal notices from the repository
         return withdrawalNoticeRepository.findAll();
     }
 }

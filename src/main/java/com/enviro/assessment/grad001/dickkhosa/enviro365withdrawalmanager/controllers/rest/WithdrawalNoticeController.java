@@ -71,6 +71,7 @@ public class WithdrawalNoticeController {
         return withdrawalNotice.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+
     /**
      * Retrieves all withdrawal notices.
      *

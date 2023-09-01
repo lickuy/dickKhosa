@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface WithdrawalNoticeRepository extends JpaRepository<WithdrawalNotice, Long> {
     List<WithdrawalNotice> findByInvestor(Investor investor);
-    // Add custom query methods if needed
+
 }

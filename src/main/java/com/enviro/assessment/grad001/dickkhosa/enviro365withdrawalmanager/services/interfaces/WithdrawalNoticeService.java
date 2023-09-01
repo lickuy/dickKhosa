@@ -38,6 +38,8 @@ public interface WithdrawalNoticeService {
      */
     Optional<WithdrawalNotice> getWithdrawalNoticeById(Long id);
 
+    Optional<Double> calculateNinetyPercent(Long withdrawalNoticeId);
+
     /**
      * Retrieves all withdrawal notices.
      *

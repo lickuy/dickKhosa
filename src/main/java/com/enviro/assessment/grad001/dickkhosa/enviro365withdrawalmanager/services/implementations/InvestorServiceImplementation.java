@@ -69,7 +69,6 @@ public class InvestorServiceImplementation implements InvestorService {
             Investor investorToUpdate = existingInvestor.get();
             investorToUpdate.setFirstName(updatedInvestor.getFirstName());
             investorToUpdate.setLastName(updatedInvestor.getLastName());
-            // ... update other properties as needed
             return investorRepository.save(investorToUpdate);
         } else {
             throw new NotFoundException("Investor with ID " + id + " not found");

@@ -86,4 +86,8 @@ public class WithdrawalNotice {
     public final int hashCode() {
         return this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
     }
+
+    public Object getAmount() {
+        return null;
+    }
 }

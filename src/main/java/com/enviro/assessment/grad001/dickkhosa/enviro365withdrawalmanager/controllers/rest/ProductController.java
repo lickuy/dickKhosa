@@ -84,7 +84,6 @@ public class ProductController {
             Product productToUpdate = existingProduct.get();
             productToUpdate.setName(updatedProduct.getName());
             productToUpdate.setType(updatedProduct.getType());
-            // ... update other properties as needed
             Product updated = productService.updateProduct(productToUpdate);
             return ResponseEntity.ok(updated);
         } else {
